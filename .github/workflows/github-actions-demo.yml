@@ -24,3 +24,6 @@ jobs:
       - name: Install sfdxGit delta
         run: |
           echo y | sfdx plugins:install sfdx-git-delta
+      - name: Deploy to Target Org.
+        run: |
+          echo "Deploying to Target ORG"
