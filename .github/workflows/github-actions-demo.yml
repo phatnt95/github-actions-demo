@@ -27,3 +27,5 @@ jobs:
       - name: Deploy to Target Org.
         run: |
           echo "Deploying to Target ORG"
+          sfdx sgd:source:delta --to "HEAD" --from "HEAD^"  --ignore ignorefile --output "."
+          cat package/package.xml
