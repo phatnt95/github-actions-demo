@@ -6,7 +6,7 @@
  * @last modified by  : NTPhat
 **/
 public with sharing class AccountController {
-    public static List<Account> getAccounts() {
+    public static List<Account> getAccounts(String searchKey) {
         return [SELECT Id, Name FROM Account WITH SECURITY_ENFORCED LIMIT 10];
     }
 }
