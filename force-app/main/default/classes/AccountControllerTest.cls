@@ -8,7 +8,7 @@
 @IsTest
 public class AccountControllerTest {
     @IsTest
-    static void getAccountsTest(){
+    static void getAccountsTest1(){
         
         Test.startTest();
         // System.runAs(contextuser){
