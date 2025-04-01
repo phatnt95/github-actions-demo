@@ -2,7 +2,7 @@ name: Deploy to sffnoobs environment on push to main
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ main ]
     paths:
       - 'force-app/**'
 
