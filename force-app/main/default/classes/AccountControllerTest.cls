@@ -26,4 +26,23 @@ public class AccountControllerTest {
         Test.stopTest();
         
     }
+    @IsTest
+    static void getAccountsTest2(){
+        
+        Test.startTest();
+        // System.runAs(contextuser){
+        // Create test data
+        Account acc = new Account(Name = 'Test Account');
+        insert acc;
+        
+        // Call the method to be tested
+        List<Account> accounts = AccountController.getAccounts('Test');
+        
+        // Verify the results
+        System.assertEquals(1, accounts.size(), 'Expected one account to be returned');
+        System.assertEquals('Test Account', accounts[0].Name, 'Expected account name to match');
+        // }
+        Test.stopTest();
+        
+    }
 }
