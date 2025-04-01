@@ -7,7 +7,7 @@
 - It involves propagating changes from DEV to PROD.<br />
 - It also involves propagating changes from PROD to DEV to keep orgs in sync.<br /><br />
 
-## Step 1: Certificates and Key (reference)
+## Step 1: Certificates and Key
 In your terminal/command prompt, type the following command. This creates the private key named ‘server.key’ <br />
 **`openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out server.key`** <br />
 Next, type the following command in terminal/command prompt to generate the ‘server.csr’ file. <br />
@@ -39,3 +39,7 @@ After saving the permitted users, scroll down to “Profiles” related list and
 
 Testing <br />
 **`sfdx force:auth:jwt:grant --clientid <CONNECTED_APP_CONSUMER_KEY> --jwtkeyfile server.key --username xxx@xxx.com --instanceurl https://login.salesforce.com`**
+
+## Reference
+- [Sfdx CLI](https://developer.salesforce.com/tools/salesforcecli)
+- [Sfdx-git-delta](https://github.com/scolladon/sfdx-git-delta)
