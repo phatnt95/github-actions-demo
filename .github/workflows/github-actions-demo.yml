@@ -30,7 +30,7 @@ jobs:
       - name: 'Create delta packages'
         run: | 
             mkdir changed-sources
-            sf sgd source delta --from 5c4a76ab3bda7fbedc4e773fd44aaf9eba6b73b8 --output changed-sources/ --generate-delta --source-dir force-app/
+            sf sgd source delta --from "5c4a76ab3bda7fbedc4e773fd44aaf9eba6b73b8" --output changed-sources/ --generate-delta --source-dir force-app/
             echo "[INFO] Diff generated"
             
       - name: 'Deploy to environment with running all local tests'
