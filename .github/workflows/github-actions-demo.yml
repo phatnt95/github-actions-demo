@@ -16,8 +16,8 @@ jobs:
           node-version: '18'
       - name: 'Checkout source code'
         uses: actions/checkout@v3
-        # with:
-        #   fetch-depth: '2'
+        with:
+          fetch-depth: '2'
             
       # Now Install Salesforce CLI
       - name: 'Install sfdx'
@@ -30,7 +30,7 @@ jobs:
       - name: 'Create delta packages'
         run: | 
             mkdir changed-sources
-            sf sgd source delta --from origin/main --output-dir changed-sources/ --generate-delta --source-dir force-app/
+            sf sgd source delta --to "HEAD" --from "HEAD~1" --output-dir changed-sources/ --generate-delta --source-dir force-app/
             echo "[INFO] Diff generated"
             
       - name: 'Deploy to environment with running all local tests'
